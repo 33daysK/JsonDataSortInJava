@@ -8,13 +8,29 @@ import java.io.OutputStreamWriter;
 import java.io.FileOutputStream;
 import java.io.BufferedWriter;
 
+/**  
+ *  OutputFileクラスです。
+ *  
+ *  @auther:33daysK
+ *  @version バージョン1.0 2020/03/17
+ *  
+ */
+
 public class OutputFile{
     public static void json(String filename, List<Student> studentsList) {
+        
+        // 受け取ったソート済みのリストをJsonArrayに入れる
         JSONArray jsonArrayofStudents = new JSONArray(studentsList);
+
+        // 出力用のJSONObject
+        // 与えられたJSONファイルがdatas:[１まとまりのJSONArray]の形だったので合わせています。
         JSONObject outputdata = new JSONObject();
+        outputdata.put("datas",jsonArrayofStudents);
+        
         String jsonFileName = filename + ".json";
         
-        outputdata.put("datas",jsonArrayofStudents);
+        // BufferedWriter <- OutputStreamWriter <- FileOutputStream <- File
+        // という流れでBufferedWriterを使っています。
         try {
             File f = new File(jsonFileName);
             OutputStreamWriter osw  = new OutputStreamWriter(new FileOutputStream(f), "UTF-8");

@@ -1,10 +1,10 @@
 
 /**  
- *  Option�N���X�ł��B
+ *  Optionクラスです。
  *  
  *  @auther:33daysK
- *  @version �o�[�W����1.0 2020/03/17
- *  Option�̒ǉ����ȒP�ɂł���悤��switch�����g�p���܂����B
+ *  @version バージョン1.0 2020/03/17
+ *  Optionの追加が簡単にできるようにswitch文を使用しました。
  */
 
 public class Option{
@@ -12,7 +12,7 @@ public class Option{
         
         switch(option){
         case "-help":
-            System.out.println("�A�v���P�[�V�����uJsonSort�v�́ACSV�`���̃t�@�C�����̏�����̓L�[�����ɕ��בւ��Č��ʂ�\�����܂��B\n");
+            System.out.println("アプリケーション「JsonSort」は、CSV形式のファイル内の情報を入力キーを元に並べ替えて結果を表示します。\n");
             break;
         default:
             System.exit(0);
