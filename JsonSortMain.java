@@ -23,11 +23,11 @@ public class JsonSortMain{
 		//  項目を追加したらInputを変更すること
 		System.out.println("並べ替えたい項目は何ですか？");
 		System.out.print("[0:番号 1:クラス 2:年齢 3:点数] > ");
-		int selectItem = Input.checkInt(3);
+		int selectItem = UserInput.checkInt(3);
 
 		System.out.println("並べ替え種別を指定してください");
 		System.out.print("[0:昇順 1:降順] > ");
-        boolean trueAscending = Input.checkBoolean();
+        boolean trueAscending = UserInput.checkBoolean();
         
         // JSONファイルの処理をするメソッドに入力項目を引き渡す
         // 以降の操作はすべてDataOperationクラスに行わせている
