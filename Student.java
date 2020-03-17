@@ -1,6 +1,14 @@
-/*  
+/**  
+ *  Studentクラスです。
  *  
- *  
+ *  @auther:33daysK
+ *  @version バージョン1.0 2020/03/17
+ *  no     = 生徒番号
+ *  name   = 生徒の名前
+ *  kurasu = クラス
+ *  age    = 年齢
+ *  val    = 点数
+ *  toString()は画面出力用に整形してあるので注意してください。
  */
 public class Student{
     private String no;
