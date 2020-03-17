@@ -1,14 +1,18 @@
-/*
- * ƒIƒvƒVƒ‡ƒ“’Ç‰Á‚ªŠÈ’P‚É‚Å‚«‚é‚æ‚¤‚É‚µ‚Ä‚¢‚Ü‚·
+
+/**  
+ *  Optionã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+ *  
+ *  @auther:33daysK
+ *  @version ãƒãƒ¼ã‚¸ãƒ§ãƒ³1.0 2020/03/17
+ *  Optionã®è¿½åŠ ãŒç°¡å˜ã«ã§ãã‚‹ã‚ˆã†ã«switchæ–‡ã‚’ä½¿ç”¨ã—ã¾ã—ãŸã€‚
  */
+
 public class Option{
-    public static void output(String args){
-        String option = "";
-        option = args;
+    public static void output(String option){
         
         switch(option){
         case "-help":
-            System.out.println("ƒAƒvƒŠƒP[ƒVƒ‡ƒ“uJsonSortv‚ÍACSVŒ`®‚Ìƒtƒ@ƒCƒ‹“à‚Ìî•ñ‚ğ“ü—ÍƒL[‚ğŒ³‚É•À‚×‘Ö‚¦‚ÄŒ‹‰Ê‚ğ•\¦‚µ‚Ü‚·B\n");
+            System.out.println("ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã€ŒJsonSortã€ã¯ã€CSVå½¢å¼ã®ãƒ•ã‚¡ã‚¤ãƒ«å†…ã®æƒ…å ±ã‚’å…¥åŠ›ã‚­ãƒ¼ã‚’å…ƒã«ä¸¦ã¹æ›¿ãˆã¦çµæœã‚’è¡¨ç¤ºã—ã¾ã™ã€‚\n");
             break;
         default:
             System.exit(0);
