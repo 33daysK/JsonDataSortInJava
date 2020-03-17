@@ -1,7 +1,4 @@
-/*
- * データファイルの中身の実質的な操作を担っている。
- * データはInputFileクラスのjsonメソッドから受け取ったもの。
- */
+
 import org.json.JSONObject;
 import org.json.JSONArray;
 import java.util.ArrayList;
