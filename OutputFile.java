@@ -1,7 +1,9 @@
 import org.json.JSONObject;
 import org.json.JSONArray;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import java.io.FileWriter;
 import java.io.File;
 import java.io.OutputStreamWriter;
@@ -13,7 +15,8 @@ import java.io.BufferedWriter;
  *  
  *  @auther:33daysK
  *  @version バージョン1.0 2020/03/17
- *  
+ *  受け取ったリストを出力用のJSONObjectクラスに修正してからファイルに出力しています。
+ *  ただし見やすいような形に整形できていないので改行スペースなしのJSONファイルになっています。
  */
 
 public class OutputFile{
@@ -23,7 +26,7 @@ public class OutputFile{
         JSONArray jsonArrayofStudents = new JSONArray(studentsList);
 
         // 出力用のJSONObject
-        // 与えられたJSONファイルがdatas:[１まとまりのJSONArray]の形だったので合わせています。
+        // 与えられたJSONファイルが{datas:[１まとまりのJSONArray]}の形だったので合わせています。
         JSONObject outputdata = new JSONObject();
         outputdata.put("datas",jsonArrayofStudents);
         
