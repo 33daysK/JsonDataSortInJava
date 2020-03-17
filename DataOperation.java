@@ -8,6 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 
+/**  
+ *  DataOperationクラスです。 メソッドはjsonのみ。
+ *  
+ *  @auther:33daysK
+ *  @version バージョン1.0 2020/03/17
+ *  InputFileクラスから受け取ったJSONObjectをStudent型のリストの形まで変換します。
+ *  そのリストをソートしてソート済みのリストを出力のためにOutputFileに渡します。
+ *  
+ */
+
 public class DataOperation{
     public static void json(int selectItem, boolean trueAscending) {
         // InputFile.json()でjsonデータの中身をjsonオブジェクトとして取得
@@ -19,7 +29,8 @@ public class DataOperation{
         JSONObject studentObject = new JSONObject();
         List<Student> studentList = new ArrayList<Student>();
         
-        for (int i=0; i<datasArray.length(); i++){
+        // for文で一つのデータのまとまり（＝　一人の生徒）ごとにデータを読み込みます。
+        for (int i = 0; i<datasArray.length(); i++){
             studentObject = datasArray.getJSONObject(i);
 
             Student students = new Student();
@@ -31,7 +42,8 @@ public class DataOperation{
             studentList.add(students);
         }
 
-        // switch文で分岐を決定してソートしている
+        // switch文で分岐を決定してソートしています
+        // ソートされたリストとfilenameの二つを最終的に一番下の行でOutputFileに渡しています。
         String fileName = "";
         switch(selectItem){
             case 0:
@@ -78,7 +90,7 @@ public class DataOperation{
                     System.out.println(s);
                 }
         }
-            
+        // ソート済みのリストとファイル名を出力するクラスに渡します。
         OutputFile.json(fileName, studentList);
     }
 }
