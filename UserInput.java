@@ -2,13 +2,13 @@
 import java.util.Scanner;
 
 /**  
- *  UserInput�N���X�ł��BcheckInt �� checkBoolean �̓�̃��\�b�h������܂��B
+ *  UserInputクラスです。checkInt と checkBoolean の二つのメソッドがあります。
  *  
  *  @auther:33daysK
- *  @version �o�[�W����1.0 2020/03/17
- *  Scanner���o�������͒����Ȃ邽�߃��C���ɏ��������Ȃ��̂ŕ������܂����B
- *  ����ɂ��łɓ��͓��e�̊m�F�������ŏ������Ă܂�
- *  Scanner��trycatch���Ă�̂�nextInt��String���ٕ̈����������Ƃ��̑΍�ł�
+ *  @version バージョン1.0 2020/03/17
+ *  Scannerを出す処理は長くなるためメインに書きたくないので分割しました。
+ *  さらについでに入力内容の確認もここで処理してます
+ *  ScannerをtrycatchしてるのはnextIntにString等の異物が入ったときの対策です
  */
 
 public class UserInput{
@@ -19,14 +19,14 @@ public class UserInput{
             Scanner scanner = new Scanner(System.in);
             check = scanner.nextInt();
         }catch(Exception e){
-            System.out.println("���͓��e���s���ł�");
+            System.out.println("入力内容が不正です");
             System.exit(0);
         }
         
-        // �������O�`�ő�l�͈̔͊O�ɂ�������G���[
-        // check�̏����l��-1�Ȃ̂ł������͂��Ȃ��Ă������ŃG���[�ɂȂ�܂��B
+        // 数字が０～最大値の範囲外にあったらエラー
+        // checkの初期値は-1なのでもし入力がなくてもここでエラーになります。
         if(check < 0 || maxNum < check){
-            System.out.println("���͓��e���s���ł�");
+            System.out.println("入力内容が不正です");
             System.exit(0);
         }
         
@@ -40,18 +40,18 @@ public class UserInput{
             Scanner scanner = new Scanner(System.in);
             check = scanner.nextInt();
         }catch(Exception e){
-            System.out.println("���͓��e���s���ł�");
+            System.out.println("入力内容が不正です");
             System.exit(0);
         }
         
-        // �قڃK�[�h�߂ł��B
+        // ほぼガード節です。
         if(check != 0 && check != 1){
-            System.out.println("���͓��e���s���ł�");
+            System.out.println("入力内容が不正です");
             System.exit(0);
         }
 
-        // check���O���P�������Ŕ��f���Ă����̂łO�Ȃ�true
-        // ����ȊO=�P�Ȃ�false��Ԃ����̕��������S�Ɏg���܂�
+        // checkを０か１かだけで判断してきたので０ならtrue
+        // それ以外=１ならfalseを返すこの方式も安全に使えます
         return (check == 0);
     }
 }
