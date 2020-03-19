@@ -6,6 +6,9 @@
 外部ライブラリとしてJSON-javaを使用しています。
 https://github.com/stleary/JSON-java
 
+外部ライブラリなども含めてひとまとめにした、いわゆるfatjarファイルを作成、追加しました。
+JsonDataSortInjava-all.jar ファイルと Testjson.jsonファイルを同じフォルダに入れると動作確認できます。
+
 指摘やご意見をお待ちしています。
 
 なおGitについての勉強の一環でもあります。 
